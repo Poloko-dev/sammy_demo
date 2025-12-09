@@ -1,0 +1,73 @@
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from "recharts";
+
+const data = [
+  { name: "Positive", value: 62, color: "hsl(142, 76%, 36%)" },
+  { name: "Neutral", value: 28, color: "hsl(220, 9%, 46%)" },
+  { name: "Negative", value: 10, color: "hsl(0, 84%, 60%)" },
+];
+
+export const SentimentChart = () => {
+  return (
+    <div className="bg-card rounded-xl border border-border p-6">
+      <div className="mb-4">
+        <h3 className="font-semibold text-foreground">Sentiment Analysis</h3>
+        <p className="text-sm text-muted-foreground">Distribution this month</p>
+      </div>
+
+      <div className="h-64">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={90}
+              paddingAngle={4}
+              dataKey="value"
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: "0.5rem",
+              }}
+              formatter={(value: number) => [`${value}%`, "Percentage"]}
+            />
+            <Legend
+              verticalAlign="bottom"
+              height={36}
+              formatter={(value) => (
+                <span className="text-sm text-foreground">{value}</span>
+              )}
+            />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-border">
+        {data.map((item) => (
+          <div key={item.name} className="text-center">
+            <div
+              className="w-3 h-3 rounded-full mx-auto mb-1"
+              style={{ backgroundColor: item.color }}
+            />
+            <p className="text-lg font-semibold text-foreground">{item.value}%</p>
+            <p className="text-xs text-muted-foreground">{item.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
