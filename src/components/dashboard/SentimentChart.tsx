@@ -15,10 +15,10 @@ const data = [
 
 export const SentimentChart = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-6">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-6 shadow-xl">
       <div className="mb-4">
-        <h3 className="font-semibold text-foreground">Sentiment Analysis</h3>
-        <p className="text-sm text-muted-foreground">Distribution this month</p>
+        <h3 className="font-semibold text-white text-lg">Sentiment Analysis</h3>
+        <p className="text-sm text-gray-400">Distribution this month</p>
       </div>
 
       <div className="h-64">
@@ -39,9 +39,10 @@ export const SentimentChart = () => {
             </Pie>
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--card))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "0.5rem",
+                backgroundColor: "rgb(17, 24, 39)",
+                border: "1px solid rgba(139, 92, 246, 0.3)",
+                borderRadius: "0.75rem",
+                color: "white",
               }}
               formatter={(value: number) => [`${value}%`, "Percentage"]}
             />
@@ -63,7 +64,9 @@ export const SentimentChart = () => {
               className="w-3 h-3 rounded-full mx-auto mb-1"
               style={{ backgroundColor: item.color }}
             />
-            <p className="text-lg font-semibold text-foreground">{item.value}%</p>
+            <p className="text-lg font-semibold text-foreground">
+              {item.value}%
+            </p>
             <p className="text-xs text-muted-foreground">{item.name}</p>
           </div>
         ))}

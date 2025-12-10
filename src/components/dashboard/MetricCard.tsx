@@ -25,18 +25,22 @@ export const MetricCard = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:shadow-lg animate-fade-in",
-        variant === "default" && "bg-card border border-border",
-        variant === "primary" && "gradient-primary text-primary-foreground",
-        variant === "accent" && "gradient-accent text-accent-foreground",
-        variant === "success" && "gradient-success text-success-foreground"
+        "relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 animate-fade-in border",
+        variant === "default" &&
+          "bg-gray-900/60 backdrop-blur-sm border-purple-900/30 shadow-lg",
+        variant === "primary" &&
+          "gradient-primary text-white border-transparent shadow-lg shadow-blue-500/20",
+        variant === "accent" &&
+          "gradient-accent text-white border-transparent shadow-lg shadow-purple-500/20",
+        variant === "success" &&
+          "gradient-success text-white border-transparent shadow-lg shadow-green-500/20"
       )}
     >
       {/* Background decoration */}
       <div
         className={cn(
-          "absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-10",
-          variant === "default" ? "bg-primary" : "bg-white"
+          "absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-10 blur-2xl",
+          variant === "default" ? "bg-purple-500" : "bg-white"
         )}
       />
 
@@ -45,7 +49,7 @@ export const MetricCard = ({
           <p
             className={cn(
               "text-sm font-medium mb-1",
-              variant === "default" ? "text-muted-foreground" : "opacity-90"
+              variant === "default" ? "text-gray-400" : "opacity-90"
             )}
           >
             {title}
@@ -59,8 +63,8 @@ export const MetricCard = ({
               <span
                 className={cn(
                   "text-sm font-medium",
-                  variant === "default" && isPositive && "text-success",
-                  variant === "default" && isNegative && "text-destructive"
+                  variant === "default" && isPositive && "text-green-400",
+                  variant === "default" && isNegative && "text-red-400"
                 )}
               >
                 {isPositive && "+"}
@@ -69,7 +73,7 @@ export const MetricCard = ({
               <span
                 className={cn(
                   "text-xs",
-                  variant === "default" ? "text-muted-foreground" : "opacity-70"
+                  variant === "default" ? "text-gray-500" : "opacity-70"
                 )}
               >
                 {changeLabel}
@@ -81,7 +85,7 @@ export const MetricCard = ({
         <div
           className={cn(
             "p-3 rounded-xl",
-            variant === "default" ? "bg-secondary" : "bg-white/20"
+            variant === "default" ? "bg-gray-800/50" : "bg-white/20"
           )}
         >
           {icon}

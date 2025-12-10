@@ -5,12 +5,7 @@ import { AlertsOverview } from "@/components/dashboard/AlertsOverview";
 import { SentimentChart } from "@/components/dashboard/SentimentChart";
 import { TrendChart } from "@/components/dashboard/TrendChart";
 import { SourcesBreakdown } from "@/components/dashboard/SourcesBreakdown";
-import { 
-  MessageSquare, 
-  Users, 
-  TrendingUp, 
-  Zap,
-} from "lucide-react";
+import { MessageSquare, Users, TrendingUp, Zap } from "lucide-react";
 
 const Index = () => {
   return (
@@ -19,14 +14,16 @@ const Index = () => {
         {/* Page Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Dashboard
+            </h1>
+            <p className="text-gray-400">
               Monitor your brand mentions across all platforms
             </p>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-gray-400">
             <span>Last updated:</span>
-            <span className="font-medium text-foreground">Just now</span>
+            <span className="font-medium text-purple-300">Just now</span>
           </div>
         </div>
 

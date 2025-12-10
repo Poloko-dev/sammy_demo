@@ -12,7 +12,6 @@ import {
   FileText,
   ChevronLeft,
   ChevronRight,
-  Zap,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -20,16 +19,10 @@ const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
   { icon: Bell, label: "Alerts", path: "/alerts" },
   { icon: MessageSquare, label: "Mentions", path: "/mentions" },
-  { icon: BarChart3, label: "Analytics", path: "/analytics" },
-  { icon: TrendingUp, label: "Insights", path: "/insights" },
   { icon: FileText, label: "Reports", path: "/reports" },
-  { icon: Globe, label: "Sources", path: "/sources" },
-  { icon: Users, label: "Team", path: "/team" },
 ];
 
-const bottomItems = [
-  { icon: Settings, label: "Settings", path: "/settings" },
-];
+const bottomItems = [{ icon: Settings, label: "Settings", path: "/settings" }];
 
 export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -37,18 +30,20 @@ export const Sidebar = () => {
   return (
     <aside
       className={cn(
-        "fixed left-0 top-0 z-40 h-screen bg-card border-r border-border transition-all duration-300 flex flex-col",
+        "fixed left-0 top-0 z-40 h-screen bg-gray-900/80 backdrop-blur-xl border-r border-purple-900/30 transition-all duration-300 flex flex-col shadow-2xl",
         collapsed ? "w-16" : "w-64"
       )}
     >
       {/* Logo */}
-      <div className="flex items-center gap-3 px-4 h-16 border-b border-border">
-        <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center shadow-glow">
-          <Zap className="w-5 h-5 text-primary-foreground" />
-        </div>
+      <div className="flex items-center gap-3 px-4 h-16 border-b border-purple-900/30">
+        <img
+          src="/SaMMy.png"
+          alt="SaMMy Logo"
+          className="w-9 h-9 rounded-xl object-contain shadow-glow"
+        />
         {!collapsed && (
-          <span className="font-bold text-lg text-foreground tracking-tight">
-            MentionFlow
+          <span className="font-bold text-xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">
+            SaMMy
           </span>
         )}
       </div>
@@ -61,10 +56,10 @@ export const Sidebar = () => {
             to={item.path}
             className={({ isActive }) =>
               cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
+                "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-purple-500/30"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800/50"
               )
             }
           >
@@ -75,17 +70,17 @@ export const Sidebar = () => {
       </nav>
 
       {/* Bottom section */}
-      <div className="px-3 py-4 border-t border-border space-y-1">
+      <div className="px-3 py-4 border-t border-purple-900/30 space-y-1">
         {bottomItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
               cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
+                "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-purple-500/30"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800/50"
               )
             }
           >
@@ -97,7 +92,7 @@ export const Sidebar = () => {
         {/* Collapse toggle */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200 w-full"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 w-full"
         >
           {collapsed ? (
             <ChevronRight className="w-5 h-5" />

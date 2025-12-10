@@ -24,11 +24,6 @@ const App = () => (
           <Route path="/mentions" element={<Mentions />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/reports" element={<Reports />} />
-          <Route path="/insights" element={<Index />} />
-          <Route path="/sources" element={<Index />} />
-          <Route path="/team" element={<Index />} />
-          <Route path="/settings" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

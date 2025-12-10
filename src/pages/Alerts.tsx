@@ -1,12 +1,12 @@
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Plus, 
-  Bell, 
-  MoreVertical, 
-  Zap, 
-  Pause, 
+import {
+  Plus,
+  Bell,
+  MoreVertical,
+  Zap,
+  Pause,
   Play,
   Settings,
   Trash2,
@@ -18,7 +18,7 @@ const alerts = [
     id: "1",
     name: "Brand Mentions",
     description: "Track all mentions of your brand across social media",
-    keywords: ["YourBrand", "YourCompany", "@yourbrand"],
+    keywords: ["Lesotho PostBank", "Lesotho PostBank", "@lesothopostbank"],
     sources: ["Twitter", "Facebook", "Instagram", "LinkedIn", "News"],
     mentions: 2847,
     status: "active",
@@ -30,7 +30,7 @@ const alerts = [
     id: "2",
     name: "Competitor Watch",
     description: "Monitor competitor brand mentions and activities",
-    keywords: ["CompetitorA", "CompetitorB", "#competitorhashtag"],
+    keywords: ["Nedbank", "Standard Lesotho Bank", "#competitorhashtag"],
     sources: ["Twitter", "LinkedIn", "Blogs", "News"],
     mentions: 1234,
     status: "active",
@@ -42,25 +42,13 @@ const alerts = [
     id: "3",
     name: "Industry News",
     description: "Stay updated on industry trends and news",
-    keywords: ["SaaS trends", "enterprise software", "B2B technology"],
+    keywords: ["Savings", "eWallet adoption", "B2B technology"],
     sources: ["News", "Blogs", "Reddit"],
     mentions: 892,
     status: "active",
     type: "basic",
     lastSpike: null,
     created: "Nov 10, 2024",
-  },
-  {
-    id: "4",
-    name: "Product Feedback",
-    description: "Collect user feedback and feature requests",
-    keywords: ["product review", "feature request", "bug report"],
-    sources: ["Twitter", "Forums", "Reddit", "TikTok"],
-    mentions: 456,
-    status: "paused",
-    type: "standard",
-    lastSpike: null,
-    created: "Oct 28, 2024",
   },
 ];
 
@@ -138,13 +126,17 @@ const Alerts = () => {
                     <Bell
                       className={cn(
                         "w-5 h-5",
-                        alert.status === "active" ? "text-primary" : "text-muted-foreground"
+                        alert.status === "active"
+                          ? "text-primary"
+                          : "text-muted-foreground"
                       )}
                     />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h4 className="font-medium text-foreground">{alert.name}</h4>
+                      <h4 className="font-medium text-foreground">
+                        {alert.name}
+                      </h4>
                       {alert.lastSpike && (
                         <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-warning/10 text-warning text-xs font-medium">
                           <Zap className="w-3 h-3" />
@@ -152,7 +144,9 @@ const Alerts = () => {
                         </div>
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground mt-0.5">{alert.description}</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">
+                      {alert.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -180,11 +174,15 @@ const Alerts = () => {
               </div>
 
               <div className="col-span-1 flex items-center">
-                <p className="font-medium text-foreground">{alert.mentions.toLocaleString()}</p>
+                <p className="font-medium text-foreground">
+                  {alert.mentions.toLocaleString()}
+                </p>
               </div>
 
               <div className="col-span-1 flex items-center">
-                <Badge className={cn("capitalize text-xs", typeStyles[alert.type])}>
+                <Badge
+                  className={cn("capitalize text-xs", typeStyles[alert.type])}
+                >
                   {alert.type}
                 </Badge>
               </div>
@@ -194,7 +192,8 @@ const Alerts = () => {
                   variant={alert.status === "active" ? "default" : "secondary"}
                   className={cn(
                     "capitalize text-xs",
-                    alert.status === "active" && "bg-success text-success-foreground"
+                    alert.status === "active" &&
+                      "bg-success text-success-foreground"
                   )}
                 >
                   {alert.status}

@@ -20,20 +20,20 @@ const data = [
 
 export const TrendChart = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-6">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-6 shadow-xl">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="font-semibold text-foreground">Mentions Trend</h3>
-          <p className="text-sm text-muted-foreground">Last 7 months performance</p>
+          <h3 className="font-semibold text-white text-lg">Mentions Trend</h3>
+          <p className="text-sm text-gray-400">Last 7 months performance</p>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-primary" />
-            <span className="text-sm text-muted-foreground">Mentions</span>
+            <div className="w-3 h-3 rounded-full bg-blue-500" />
+            <span className="text-sm text-gray-400">Mentions</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-accent" />
-            <span className="text-sm text-muted-foreground">Reach</span>
+            <div className="w-3 h-3 rounded-full bg-purple-500" />
+            <span className="text-sm text-gray-400">Reach</span>
           </div>
         </div>
       </div>
@@ -43,24 +43,43 @@ export const TrendChart = () => {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorMentions" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(217, 91%, 60%)" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="hsl(217, 91%, 60%)" stopOpacity={0} />
+                <stop
+                  offset="5%"
+                  stopColor="hsl(217, 91%, 60%)"
+                  stopOpacity={0.3}
+                />
+                <stop
+                  offset="95%"
+                  stopColor="hsl(217, 91%, 60%)"
+                  stopOpacity={0}
+                />
               </linearGradient>
               <linearGradient id="colorReach" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="hsl(262, 83%, 58%)" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="hsl(262, 83%, 58%)" stopOpacity={0} />
+                <stop
+                  offset="5%"
+                  stopColor="hsl(262, 83%, 58%)"
+                  stopOpacity={0.3}
+                />
+                <stop
+                  offset="95%"
+                  stopColor="hsl(262, 83%, 58%)"
+                  stopOpacity={0}
+                />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="rgba(139, 92, 246, 0.1)"
+            />
             <XAxis
               dataKey="name"
-              stroke="hsl(var(--muted-foreground))"
+              stroke="rgb(156, 163, 175)"
               fontSize={12}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
-              stroke="hsl(var(--muted-foreground))"
+              stroke="rgb(156, 163, 175)"
               fontSize={12}
               tickLine={false}
               axisLine={false}
@@ -68,11 +87,12 @@ export const TrendChart = () => {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--card))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "0.5rem",
+                backgroundColor: "rgb(17, 24, 39)",
+                border: "1px solid rgba(139, 92, 246, 0.3)",
+                borderRadius: "0.75rem",
+                color: "white",
               }}
-              labelStyle={{ color: "hsl(var(--foreground))" }}
+              labelStyle={{ color: "white" }}
             />
             <Area
               type="monotone"
