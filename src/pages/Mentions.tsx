@@ -3,13 +3,13 @@ import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { 
-  Search, 
-  Filter, 
-  Download, 
-  Twitter, 
-  Facebook, 
-  Instagram, 
+import {
+  Search,
+  Filter,
+  Download,
+  Twitter,
+  Facebook,
+  Instagram,
   Linkedin,
   Youtube,
   MessageCircle,
@@ -64,11 +64,12 @@ interface Mention {
 const mockMentions: Mention[] = [
   {
     id: "1",
-    platform: "twitter",
-    author: "Sarah Johnson",
-    authorHandle: "@sarahj_tech",
+    platform: "facebook",
+    author: "Informative Newspaper",
+    authorHandle: "@informative_news",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
-    content: "Just tried @YourBrand's new feature and I'm blown away! The attention to detail is incredible. This is exactly what we needed for our workflow. 🚀",
+    content:
+      "Business banking with Lesotho PostBank now have powe to NEGOTIATE interest rate on their INVESTMENT.",
     sentiment: "positive",
     engagement: { likes: 234, comments: 45, shares: 67 },
     timestamp: "2024-12-09 10:23 AM",
@@ -79,10 +80,11 @@ const mockMentions: Mention[] = [
   {
     id: "2",
     platform: "linkedin",
-    author: "Michael Chen",
-    authorHandle: "michael-chen",
+    author: "The Reporter",
+    authorHandle: "@the_reporters",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=michael",
-    content: "Great insights from the latest YourBrand case study. The ROI metrics they shared are impressive. Worth reading for anyone in enterprise software.",
+    content:
+      "BUSINESS\nThe United Nations Development Programme (UNDP) and Lesotho Post Bank (LPB) have joined forces to empower women and youth-led Micro, Small and Medium Enterprises (MSMEs).",
     sentiment: "positive",
     engagement: { likes: 156, comments: 23, shares: 34 },
     timestamp: "2024-12-09 09:45 AM",
@@ -92,12 +94,13 @@ const mockMentions: Mention[] = [
   },
   {
     id: "3",
-    platform: "instagram",
-    author: "Design Weekly",
-    authorHandle: "@designweekly",
+    platform: "twitter",
+    author: "Thabo Mosoeu",
+    authorHandle: "@thabo_mosoeu",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=design",
-    content: "Featured: How @YourBrand redesigned their dashboard for better UX. Swipe to see the before and after! 📱✨",
-    sentiment: "positive",
+    content:
+      "My mobile money app is having issues again. I can't seem to send or receive money. @LesothoPostBank, can you help me sort this out?",
+    sentiment: "negative",
     engagement: { likes: 1893, comments: 124, shares: 89 },
     timestamp: "2024-12-09 08:15 AM",
     source: "instagram.com",
@@ -106,49 +109,29 @@ const mockMentions: Mention[] = [
   },
   {
     id: "4",
-    platform: "twitter",
-    author: "Alex Rivera",
-    authorHandle: "@alexr_dev",
+    platform: "facebook",
+    author: "Tech Today",
+    authorHandle: "@tech_today",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=alex",
-    content: "Having some issues with YourBrand's API today. Anyone else experiencing slowdowns? @YourBrandSupport",
-    sentiment: "negative",
+    content:
+      "Litaba tse monate ke tseo ho tsoa ho Lesotho PostBank! Ba fanne ka litšebeletso tse ncha tsa banka inthaneteng ho thusa bareki ho laola lichelete tsa bona habonolo le ka polokeho.",
+    sentiment: "positive",
     engagement: { likes: 12, comments: 8, shares: 2 },
     timestamp: "2024-12-09 07:30 AM",
     source: "twitter.com",
     alert: "Product Feedback",
     reach: 2100,
   },
-  {
-    id: "5",
-    platform: "facebook",
-    author: "Tech Today",
-    authorHandle: "techtoday",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=tech",
-    content: "YourBrand announces new partnership with major enterprise clients. Read more about their expansion plans in our latest article.",
-    sentiment: "neutral",
-    engagement: { likes: 89, comments: 15, shares: 23 },
-    timestamp: "2024-12-08 06:00 PM",
-    source: "facebook.com",
-    alert: "Industry News",
-    reach: 12000,
-  },
-  {
-    id: "6",
-    platform: "youtube",
-    author: "Tech Reviews",
-    authorHandle: "@techreviews",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=youtube",
-    content: "Full review of YourBrand's latest features - Is it worth the upgrade? Watch our comprehensive breakdown!",
-    sentiment: "positive",
-    engagement: { likes: 567, comments: 89, shares: 45 },
-    timestamp: "2024-12-08 03:00 PM",
-    source: "youtube.com",
-    alert: "Brand Mentions",
-    reach: 23000,
-  },
 ];
 
-const filters = ["All", "Twitter", "Facebook", "Instagram", "LinkedIn", "YouTube"];
+const filters = [
+  "All",
+  "Twitter",
+  "Facebook",
+  "Instagram",
+  "LinkedIn",
+  "YouTube",
+];
 const sentiments = ["All Sentiments", "Positive", "Neutral", "Negative"];
 
 const Mentions = () => {
@@ -182,7 +165,7 @@ const Mentions = () => {
                 className="pl-10 bg-secondary border-0"
               />
             </div>
-            
+
             <div className="flex items-center gap-2 flex-wrap">
               <div className="flex items-center gap-1 bg-secondary rounded-lg p-1">
                 {filters.map((filter) => (
@@ -229,8 +212,9 @@ const Mentions = () => {
         {/* Mentions List */}
         <div className="space-y-4">
           {mockMentions.map((mention, index) => {
-            const PlatformIcon = platformIcons[mention.platform] || MessageCircle;
-            
+            const PlatformIcon =
+              platformIcons[mention.platform] || MessageCircle;
+
             return (
               <div
                 key={mention.id}
@@ -243,42 +227,68 @@ const Mentions = () => {
                     alt={mention.author}
                     className="w-12 h-12 rounded-full bg-secondary"
                   />
-                  
+
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-semibold text-foreground">{mention.author}</span>
-                          <span className="text-sm text-muted-foreground">{mention.authorHandle}</span>
-                          <span className="text-sm text-muted-foreground">·</span>
-                          <span className="text-sm text-muted-foreground">{mention.timestamp}</span>
+                          <span className="font-semibold text-foreground">
+                            {mention.author}
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            {mention.authorHandle}
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            ·
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            {mention.timestamp}
+                          </span>
                         </div>
-                        <p className="mt-2 text-foreground leading-relaxed">{mention.content}</p>
+                        <p className="mt-2 text-foreground leading-relaxed">
+                          {mention.content}
+                        </p>
                       </div>
-                      
+
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <Badge variant="outline" className="text-xs">
                           {mention.alert}
                         </Badge>
                       </div>
                     </div>
-                    
+
                     <div className="mt-4 flex items-center justify-between flex-wrap gap-4">
                       <div className="flex items-center gap-3">
-                        <div className={cn("flex items-center gap-1.5 px-2.5 py-1 rounded-lg", platformColors[mention.platform])}>
+                        <div
+                          className={cn(
+                            "flex items-center gap-1.5 px-2.5 py-1 rounded-lg",
+                            platformColors[mention.platform]
+                          )}
+                        >
                           <PlatformIcon className="w-4 h-4" />
-                          <span className="text-sm font-medium capitalize">{mention.platform}</span>
+                          <span className="text-sm font-medium capitalize">
+                            {mention.platform}
+                          </span>
                         </div>
-                        
-                        <Badge variant="outline" className={cn("text-xs", sentimentColors[mention.sentiment])}>
+
+                        <Badge
+                          variant="outline"
+                          className={cn(
+                            "text-xs",
+                            sentimentColors[mention.sentiment]
+                          )}
+                        >
                           {mention.sentiment}
                         </Badge>
 
                         <span className="text-sm text-muted-foreground">
-                          Reach: <span className="font-medium text-foreground">{mention.reach.toLocaleString()}</span>
+                          Reach:{" "}
+                          <span className="font-medium text-foreground">
+                            {mention.reach.toLocaleString()}
+                          </span>
                         </span>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 text-muted-foreground text-sm">
                         <span className="flex items-center gap-1.5 hover:text-foreground transition-colors cursor-pointer">
                           <Heart className="w-4 h-4" />

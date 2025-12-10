@@ -8,7 +8,7 @@ interface DashboardLayoutProps {
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen gradient-bg">
       <Sidebar />
       <div className="pl-64 transition-all duration-300">
         <Header />

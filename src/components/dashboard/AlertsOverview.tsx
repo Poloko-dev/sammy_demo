@@ -18,7 +18,7 @@ const mockAlerts: Alert[] = [
   {
     id: "1",
     name: "Brand Mentions",
-    keywords: ["YourBrand", "YourCompany"],
+    keywords: ["Lesotho Post Bank", "Lesotho PostBank"],
     sources: ["Twitter", "Facebook", "News"],
     mentions: 2847,
     status: "active",
@@ -28,7 +28,7 @@ const mockAlerts: Alert[] = [
   {
     id: "2",
     name: "Competitor Watch",
-    keywords: ["CompetitorA", "CompetitorB"],
+    keywords: ["Nedbank", "Standard Lesotho Bank"],
     sources: ["Twitter", "LinkedIn", "Blogs"],
     mentions: 1234,
     status: "active",
@@ -38,21 +38,11 @@ const mockAlerts: Alert[] = [
   {
     id: "3",
     name: "Industry News",
-    keywords: ["SaaS trends", "enterprise software"],
+    keywords: ["Savings", "eWallet adoption"],
     sources: ["News", "Blogs", "Reddit"],
     mentions: 892,
     status: "active",
     type: "basic",
-    hasSpike: false,
-  },
-  {
-    id: "4",
-    name: "Product Feedback",
-    keywords: ["product review", "feature request"],
-    sources: ["Twitter", "Forums", "Reddit"],
-    mentions: 456,
-    status: "paused",
-    type: "standard",
     hasSpike: false,
   },
 ];
@@ -65,11 +55,11 @@ const typeColors: Record<string, string> = {
 
 export const AlertsOverview = () => {
   return (
-    <div className="bg-card rounded-xl border border-border overflow-hidden">
-      <div className="px-6 py-4 border-b border-border flex items-center justify-between">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 overflow-hidden shadow-xl">
+      <div className="px-6 py-4 border-b border-purple-900/30 flex items-center justify-between">
         <div>
-          <h3 className="font-semibold text-foreground">Active Alerts</h3>
-          <p className="text-sm text-muted-foreground">4 of 10 alerts configured</p>
+          <h3 className="font-semibold text-white text-lg">Active Alerts</h3>
+          <p className="text-sm text-gray-400">4 of 10 alerts configured</p>
         </div>
         <Button size="sm" variant="outline" className="gap-2">
           <Plus className="w-4 h-4" />
@@ -95,14 +85,18 @@ export const AlertsOverview = () => {
                   <Bell
                     className={cn(
                       "w-5 h-5",
-                      alert.status === "active" ? "text-primary" : "text-muted-foreground"
+                      alert.status === "active"
+                        ? "text-primary"
+                        : "text-muted-foreground"
                     )}
                   />
                 </div>
-                
+
                 <div>
                   <div className="flex items-center gap-2">
-                    <h4 className="font-medium text-foreground">{alert.name}</h4>
+                    <h4 className="font-medium text-foreground">
+                      {alert.name}
+                    </h4>
                     {alert.hasSpike && (
                       <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-warning/10 text-warning text-xs font-medium">
                         <Zap className="w-3 h-3" />
@@ -110,17 +104,21 @@ export const AlertsOverview = () => {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     <div className="flex items-center gap-1">
                       {alert.keywords.map((keyword) => (
-                        <Badge key={keyword} variant="secondary" className="text-xs">
+                        <Badge
+                          key={keyword}
+                          variant="secondary"
+                          className="text-xs"
+                        >
                           {keyword}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mt-1">
                     {alert.sources.join(", ")}
                   </p>
@@ -134,11 +132,13 @@ export const AlertsOverview = () => {
                   </p>
                   <p className="text-xs text-muted-foreground">mentions</p>
                 </div>
-                
-                <Badge className={cn("capitalize text-xs", typeColors[alert.type])}>
+
+                <Badge
+                  className={cn("capitalize text-xs", typeColors[alert.type])}
+                >
                   {alert.type}
                 </Badge>
-                
+
                 <button className="p-1 rounded hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground">
                   <MoreVertical className="w-4 h-4" />
                 </button>
