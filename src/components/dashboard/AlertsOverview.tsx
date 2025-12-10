@@ -56,14 +56,23 @@ const typeColors: Record<string, string> = {
 export const AlertsOverview = () => {
   return (
     <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 overflow-hidden shadow-xl">
-      <div className="px-6 py-4 border-b border-purple-900/30 flex items-center justify-between">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-900/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h3 className="font-semibold text-white text-lg">Active Alerts</h3>
-          <p className="text-sm text-gray-400">4 of 10 alerts configured</p>
+          <h3 className="font-semibold text-white text-base sm:text-lg">
+            Active Alerts
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-400">
+            4 of 10 alerts configured
+          </p>
         </div>
-        <Button size="sm" variant="outline" className="gap-2">
-          <Plus className="w-4 h-4" />
-          Add Alert
+        <Button
+          size="sm"
+          variant="outline"
+          className="gap-2 text-xs sm:text-sm"
+        >
+          <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
+          <span className="hidden sm:inline">Add Alert</span>
+          <span className="sm:hidden">Add</span>
         </Button>
       </div>
 
@@ -71,20 +80,20 @@ export const AlertsOverview = () => {
         {mockAlerts.map((alert, index) => (
           <div
             key={alert.id}
-            className="p-4 hover:bg-secondary/50 transition-colors animate-slide-up"
+            className="p-3 sm:p-4 hover:bg-secondary/50 transition-colors animate-slide-up"
             style={{ animationDelay: `${index * 0.05}s` }}
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-start gap-3">
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
+              <div className="flex items-start gap-2 sm:gap-3 flex-1 min-w-0">
                 <div
                   className={cn(
-                    "w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0",
+                    "w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0",
                     alert.status === "active" ? "bg-primary/10" : "bg-muted"
                   )}
                 >
                   <Bell
                     className={cn(
-                      "w-5 h-5",
+                      "w-4 h-4 sm:w-5 sm:h-5",
                       alert.status === "active"
                         ? "text-primary"
                         : "text-muted-foreground"
@@ -92,9 +101,9 @@ export const AlertsOverview = () => {
                   />
                 </div>
 
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h4 className="font-medium text-foreground">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h4 className="font-medium text-foreground text-sm sm:text-base">
                       {alert.name}
                     </h4>
                     {alert.hasSpike && (
@@ -106,7 +115,7 @@ export const AlertsOverview = () => {
                   </div>
 
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 flex-wrap">
                       {alert.keywords.map((keyword) => (
                         <Badge
                           key={keyword}
@@ -119,28 +128,31 @@ export const AlertsOverview = () => {
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1 truncate">
                     {alert.sources.join(", ")}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
                 <div className="text-right">
-                  <p className="text-lg font-semibold text-foreground">
+                  <p className="text-base sm:text-lg font-semibold text-foreground">
                     {alert.mentions.toLocaleString()}
                   </p>
                   <p className="text-xs text-muted-foreground">mentions</p>
                 </div>
 
                 <Badge
-                  className={cn("capitalize text-xs", typeColors[alert.type])}
+                  className={cn(
+                    "capitalize text-xs hidden sm:inline-flex",
+                    typeColors[alert.type]
+                  )}
                 >
                   {alert.type}
                 </Badge>
 
                 <button className="p-1 rounded hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground">
-                  <MoreVertical className="w-4 h-4" />
+                  <MoreVertical className="w-3 h-3 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </div>

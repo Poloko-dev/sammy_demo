@@ -20,25 +20,29 @@ const data = [
 
 export const TrendChart = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-6 shadow-xl">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
         <div>
-          <h3 className="font-semibold text-white text-lg">Mentions Trend</h3>
-          <p className="text-sm text-gray-400">Last 7 months performance</p>
+          <h3 className="font-semibold text-white text-base sm:text-lg">
+            Mentions Trend
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-400">
+            Last 7 months performance
+          </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span className="text-sm text-gray-400">Mentions</span>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-500" />
+            <span className="text-xs sm:text-sm text-gray-400">Mentions</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-purple-500" />
-            <span className="text-sm text-gray-400">Reach</span>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-500" />
+            <span className="text-xs sm:text-sm text-gray-400">Reach</span>
           </div>
         </div>
       </div>
 
-      <div className="h-72">
+      <div className="h-64 sm:h-72">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

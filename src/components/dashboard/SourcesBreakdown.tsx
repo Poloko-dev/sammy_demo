@@ -88,10 +88,12 @@ const sources: Source[] = [
 
 export const SourcesBreakdown = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-6 shadow-xl">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
       <div className="mb-4">
-        <h3 className="font-semibold text-white text-lg">Sources Breakdown</h3>
-        <p className="text-sm text-gray-400">Mentions by platform</p>
+        <h3 className="font-semibold text-white text-base sm:text-lg">
+          Sources Breakdown
+        </h3>
+        <p className="text-xs sm:text-sm text-gray-400">Mentions by platform</p>
       </div>
 
       <div className="space-y-3">
@@ -103,16 +105,18 @@ export const SourcesBreakdown = () => {
           >
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
-                <source.icon className={cn("w-4 h-4", source.color)} />
-                <span className="text-sm font-medium text-white">
+                <source.icon
+                  className={cn("w-3 h-3 sm:w-4 sm:h-4", source.color)}
+                />
+                <span className="text-xs sm:text-sm font-medium text-white">
                   {source.name}
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-400">
+                <span className="text-xs sm:text-sm text-gray-400">
                   {source.mentions.toLocaleString()}
                 </span>
-                <span className="text-xs text-gray-400 w-10 text-right">
+                <span className="text-xs text-gray-400 w-8 sm:w-10 text-right">
                   {source.percentage}%
                 </span>
               </div>

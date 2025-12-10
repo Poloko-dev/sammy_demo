@@ -15,13 +15,17 @@ const data = [
 
 export const SentimentChart = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-6 shadow-xl">
+    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
       <div className="mb-4">
-        <h3 className="font-semibold text-white text-lg">Sentiment Analysis</h3>
-        <p className="text-sm text-gray-400">Distribution this month</p>
+        <h3 className="font-semibold text-white text-base sm:text-lg">
+          Sentiment Analysis
+        </h3>
+        <p className="text-xs sm:text-sm text-gray-400">
+          Distribution this month
+        </p>
       </div>
 
-      <div className="h-64">
+      <div className="h-56 sm:h-64">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie

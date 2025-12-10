@@ -25,7 +25,7 @@ export const MetricCard = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 animate-fade-in border",
+        "relative overflow-hidden rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl sm:hover:scale-105 animate-fade-in border",
         variant === "default" &&
           "bg-gray-900/60 backdrop-blur-sm border-purple-900/30 shadow-lg",
         variant === "primary" &&
@@ -45,24 +45,26 @@ export const MetricCard = ({
       />
 
       <div className="flex items-start justify-between relative z-10">
-        <div>
+        <div className="flex-1 min-w-0">
           <p
             className={cn(
-              "text-sm font-medium mb-1",
+              "text-xs sm:text-sm font-medium mb-1",
               variant === "default" ? "text-gray-400" : "opacity-90"
             )}
           >
             {title}
           </p>
-          <p className="text-3xl font-bold tracking-tight">{value}</p>
+          <p className="text-2xl sm:text-3xl font-bold tracking-tight">
+            {value}
+          </p>
 
           {change !== undefined && (
             <div className="flex items-center gap-1.5 mt-2">
-              {isPositive && <TrendingUp className="w-4 h-4" />}
-              {isNegative && <TrendingDown className="w-4 h-4" />}
+              {isPositive && <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />}
+              {isNegative && <TrendingDown className="w-3 h-3 sm:w-4 sm:h-4" />}
               <span
                 className={cn(
-                  "text-sm font-medium",
+                  "text-xs sm:text-sm font-medium",
                   variant === "default" && isPositive && "text-green-400",
                   variant === "default" && isNegative && "text-red-400"
                 )}
@@ -72,7 +74,7 @@ export const MetricCard = ({
               </span>
               <span
                 className={cn(
-                  "text-xs",
+                  "text-xs hidden sm:inline",
                   variant === "default" ? "text-gray-500" : "opacity-70"
                 )}
               >
@@ -84,7 +86,7 @@ export const MetricCard = ({
 
         <div
           className={cn(
-            "p-3 rounded-xl",
+            "p-2 sm:p-3 rounded-xl flex-shrink-0",
             variant === "default" ? "bg-gray-800/50" : "bg-white/20"
           )}
         >

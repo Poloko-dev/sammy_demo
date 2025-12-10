@@ -110,14 +110,18 @@ const mockMentions: Mention[] = [
 export const MentionsFeed = () => {
   return (
     <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 overflow-hidden shadow-xl">
-      <div className="px-6 py-4 border-b border-purple-900/30 flex items-center justify-between">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-900/30 flex items-center justify-between gap-2">
         <div>
-          <h3 className="font-semibold text-white text-lg">Recent Mentions</h3>
-          <p className="text-sm text-gray-400">Live feed across all sources</p>
+          <h3 className="font-semibold text-white text-base sm:text-lg">
+            Recent Mentions
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-400">
+            Live feed across all sources
+          </p>
         </div>
         <Badge
           variant="secondary"
-          className="animate-pulse-soft bg-green-500/20 text-green-400 border-green-500/30"
+          className="animate-pulse-soft bg-green-500/20 text-green-400 border-green-500/30 text-xs"
         >
           <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
           Live
@@ -131,14 +135,14 @@ export const MentionsFeed = () => {
           return (
             <div
               key={mention.id}
-              className="p-4 hover:bg-gray-800/30 transition-colors animate-slide-up"
+              className="p-3 sm:p-4 hover:bg-gray-800/30 transition-colors animate-slide-up"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <img
                   src={mention.avatar}
                   alt={mention.author}
-                  className="w-10 h-10 rounded-full bg-gray-800"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex-shrink-0"
                 />
 
                 <div className="flex-1 min-w-0">
