@@ -60,10 +60,10 @@ const mockMentions: Mention[] = [
     authorHandle: "informative-news",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
     content:
-      "Business banking with Lesotho PostBank now have powe to NEGOTIATE interest rate on their INVESTMENT.",
+      "Business banking with Lesotho PostBank now have power to NEGOTIATE interest rate on their INVESTMENT.",
     sentiment: "positive",
-    engagement: { likes: 234, comments: 45, shares: 67 },
-    timestamp: "Decemeber 4",
+    engagement: { likes: 87, comments: 12, shares: 23 },
+    timestamp: "December 4",
     source: "facebook.com",
   },
   {
@@ -75,7 +75,7 @@ const mockMentions: Mention[] = [
     content:
       "BUSINESS\nThe United Nations Development Programme (UNDP) and Lesotho Post Bank (LPB) have joined forces to empower women and youth-led Micro, Small and Medium Enterprises (MSMEs).",
     sentiment: "positive",
-    engagement: { likes: 156, comments: 23, shares: 34 },
+    engagement: { likes: 142, comments: 18, shares: 31 },
     timestamp: "15 min ago",
     source: "linkedin.com",
   },
@@ -88,7 +88,7 @@ const mockMentions: Mention[] = [
     content:
       "My mobile money app is having issues again. I can't seem to send or receive money. @LesothoPostBank, can you help me sort this out?",
     sentiment: "negative",
-    engagement: { likes: 12, comments: 8, shares: 2 },
+    engagement: { likes: 8, comments: 5, shares: 1 },
     timestamp: "2 hours ago",
     source: "twitter.com",
   },

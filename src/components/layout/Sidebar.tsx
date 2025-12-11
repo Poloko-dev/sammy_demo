@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  Sliders,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -21,6 +22,7 @@ const navItems = [
   { icon: Bell, label: "Alerts", path: "/alerts" },
   { icon: MessageSquare, label: "Mentions", path: "/mentions" },
   { icon: FileText, label: "Reports", path: "/reports" },
+  { icon: Sliders, label: "Configuration", path: "/configuration" },
 ];
 
 const bottomItems = [{ icon: Settings, label: "Settings", path: "/settings" }];

@@ -9,13 +9,13 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Jan", mentions: 4200, reach: 24000 },
-  { name: "Feb", mentions: 3800, reach: 21000 },
-  { name: "Mar", mentions: 5100, reach: 29000 },
-  { name: "Apr", mentions: 4700, reach: 26000 },
-  { name: "May", mentions: 6200, reach: 35000 },
-  { name: "Jun", mentions: 5800, reach: 32000 },
-  { name: "Jul", mentions: 7400, reach: 42000 },
+  { name: "Jun", mentions: 198, reach: 14200 },
+  { name: "Jul", mentions: 215, reach: 16800 },
+  { name: "Aug", mentions: 234, reach: 18300 },
+  { name: "Sep", mentions: 267, reach: 19500 },
+  { name: "Oct", mentions: 289, reach: 21400 },
+  { name: "Nov", mentions: 312, reach: 24100 },
+  { name: "Dec", mentions: 332, reach: 26700 },
 ];
 
 export const TrendChart = () => {

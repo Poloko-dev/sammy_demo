@@ -8,6 +8,7 @@ import Alerts from "./pages/Alerts";
 import Mentions from "./pages/Mentions";
 import Analytics from "./pages/Analytics";
 import Reports from "./pages/Reports";
+import Configuration from "./pages/Configuration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/mentions" element={<Mentions />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/configuration" element={<Configuration />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
