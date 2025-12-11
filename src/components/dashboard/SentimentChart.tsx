@@ -8,9 +8,9 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Positive", value: 62, color: "hsl(142, 76%, 36%)" },
-  { name: "Neutral", value: 28, color: "hsl(220, 9%, 46%)" },
-  { name: "Negative", value: 10, color: "hsl(0, 84%, 60%)" },
+  { name: "Positive", value: 58, color: "hsl(142, 76%, 36%)" },
+  { name: "Neutral", value: 31, color: "hsl(220, 9%, 46%)" },
+  { name: "Negative", value: 11, color: "hsl(0, 84%, 60%)" },
 ];
 
 export const SentimentChart = () => {

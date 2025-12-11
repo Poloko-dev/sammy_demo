@@ -31,28 +31,28 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <MetricCard
             title="Total Mentions"
-            value="35,654"
-            change={12.5}
+            value="1,847"
+            change={15.3}
             icon={<MessageSquare className="w-5 h-5 text-primary" />}
             variant="default"
           />
           <MetricCard
             title="Reach"
-            value="2.4M"
-            change={8.3}
+            value="128K"
+            change={12.7}
             icon={<Users className="w-5 h-5 text-primary-foreground" />}
             variant="primary"
           />
           <MetricCard
             title="Engagement"
-            value="156K"
-            change={-3.2}
+            value="8.2K"
+            change={5.8}
             icon={<TrendingUp className="w-5 h-5 text-accent-foreground" />}
             variant="accent"
           />
           <MetricCard
             title="Active Alerts"
-            value="4/10"
+            value="3/10"
             icon={<Zap className="w-5 h-5 text-success-foreground" />}
             variant="success"
           />
