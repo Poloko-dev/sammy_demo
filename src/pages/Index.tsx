@@ -14,16 +14,16 @@ const Index = () => {
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
               Dashboard
             </h1>
-            <p className="text-sm sm:text-base text-gray-400">
+            <p className="text-sm sm:text-base text-gray-600">
               Monitor your brand mentions across all platforms
             </p>
           </div>
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
             <span>Last updated:</span>
-            <span className="font-medium text-purple-300">Just now</span>
+            <span className="font-medium text-primary">Just now</span>
           </div>
         </div>
 

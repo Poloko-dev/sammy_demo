@@ -50,18 +50,18 @@ const mockAlerts: Alert[] = [
 const typeColors: Record<string, string> = {
   basic: "bg-muted text-muted-foreground",
   standard: "bg-primary/10 text-primary",
-  advanced: "gradient-primary text-primary-foreground",
+  advanced: "bg-primary text-white",
 };
 
 export const AlertsOverview = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 overflow-hidden shadow-xl">
-      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-900/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h3 className="font-semibold text-white text-base sm:text-lg">
+          <h3 className="font-semibold text-gray-900 text-base sm:text-lg">
             Active Alerts
           </h3>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-600">
             4 of 10 alerts configured
           </p>
         </div>

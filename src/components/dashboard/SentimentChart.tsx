@@ -15,12 +15,12 @@ const data = [
 
 export const SentimentChart = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 shadow-sm">
       <div className="mb-4">
-        <h3 className="font-semibold text-white text-base sm:text-lg">
+        <h3 className="font-semibold text-gray-900 text-base sm:text-lg">
           Sentiment Analysis
         </h3>
-        <p className="text-xs sm:text-sm text-gray-400">
+        <p className="text-xs sm:text-sm text-gray-600">
           Distribution this month
         </p>
       </div>
@@ -43,10 +43,10 @@ export const SentimentChart = () => {
             </Pie>
             <Tooltip
               contentStyle={{
-                backgroundColor: "rgb(17, 24, 39)",
-                border: "1px solid rgba(139, 92, 246, 0.3)",
-                borderRadius: "0.75rem",
-                color: "white",
+                backgroundColor: "white",
+                border: "1px solid hsl(220 13% 91%)",
+                borderRadius: "0.5rem",
+                color: "rgb(17, 24, 39)",
               }}
               formatter={(value: number) => [`${value}%`, "Percentage"]}
             />

@@ -109,13 +109,13 @@ const mockMentions: Mention[] = [
 
 export const MentionsFeed = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 overflow-hidden shadow-xl">
-      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-900/30 flex items-center justify-between gap-2">
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 flex items-center justify-between gap-2">
         <div>
-          <h3 className="font-semibold text-white text-base sm:text-lg">
+          <h3 className="font-semibold text-gray-900 text-base sm:text-lg">
             Recent Mentions
           </h3>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-600">
             Live feed across all sources
           </p>
         </div>
@@ -128,38 +128,38 @@ export const MentionsFeed = () => {
         </Badge>
       </div>
 
-      <div className="divide-y divide-purple-900/20">
+      <div className="divide-y divide-gray-200">
         {mockMentions.map((mention, index) => {
           const PlatformIcon = platformIcons[mention.platform] || MessageCircle;
 
           return (
             <div
               key={mention.id}
-              className="p-3 sm:p-4 hover:bg-gray-800/30 transition-colors animate-slide-up"
+              className="p-3 sm:p-4 hover:bg-gray-50 transition-colors animate-slide-up"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex gap-3 sm:gap-4">
                 <img
                   src={mention.avatar}
                   alt={mention.author}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex-shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex-shrink-0"
                 />
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-medium text-white">
+                    <span className="font-medium text-gray-900">
                       {mention.author}
                     </span>
-                    <span className="text-sm text-gray-400">
+                    <span className="text-sm text-gray-500">
                       {mention.authorHandle}
                     </span>
-                    <span className="text-sm text-gray-400">·</span>
-                    <span className="text-sm text-gray-400">
+                    <span className="text-sm text-gray-500">·</span>
+                    <span className="text-sm text-gray-500">
                       {mention.timestamp}
                     </span>
                   </div>
 
-                  <p className="mt-1 text-gray-200 leading-relaxed">
+                  <p className="mt-1 text-gray-700 leading-relaxed">
                     {mention.content}
                   </p>
 
@@ -186,7 +186,7 @@ export const MentionsFeed = () => {
                       {mention.sentiment}
                     </Badge>
 
-                    <div className="flex items-center gap-4 text-gray-400 text-sm ml-auto">
+                    <div className="flex items-center gap-4 text-gray-600 text-sm ml-auto">
                       <span className="flex items-center gap-1">
                         <Heart className="w-4 h-4" />
                         {mention.engagement.likes}
@@ -214,7 +214,7 @@ export const MentionsFeed = () => {
         })}
       </div>
 
-      <div className="px-6 py-4 border-t border-border">
+      <div className="px-6 py-4 border-t border-gray-200">
         <button className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
           View all mentions →
         </button>

@@ -25,22 +25,21 @@ export const MetricCard = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl sm:hover:scale-105 animate-fade-in border",
-        variant === "default" &&
-          "bg-gray-900/60 backdrop-blur-sm border-purple-900/30 shadow-lg",
+        "relative overflow-hidden rounded-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-lg sm:hover:scale-105 animate-fade-in border",
+        variant === "default" && "bg-white border-gray-200 shadow-sm",
         variant === "primary" &&
-          "gradient-primary text-white border-transparent shadow-lg shadow-blue-500/20",
+          "bg-primary text-white border-transparent shadow-sm",
         variant === "accent" &&
-          "gradient-accent text-white border-transparent shadow-lg shadow-purple-500/20",
+          "bg-primary text-white border-transparent shadow-sm",
         variant === "success" &&
-          "gradient-success text-white border-transparent shadow-lg shadow-green-500/20"
+          "bg-success text-white border-transparent shadow-sm"
       )}
     >
       {/* Background decoration */}
       <div
         className={cn(
-          "absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-10 blur-2xl",
-          variant === "default" ? "bg-purple-500" : "bg-white"
+          "absolute -right-4 -top-4 w-24 h-24 rounded-full opacity-5 blur-2xl",
+          variant === "default" ? "bg-primary" : "bg-white"
         )}
       />
 
@@ -49,7 +48,7 @@ export const MetricCard = ({
           <p
             className={cn(
               "text-xs sm:text-sm font-medium mb-1",
-              variant === "default" ? "text-gray-400" : "opacity-90"
+              variant === "default" ? "text-gray-600" : "opacity-90"
             )}
           >
             {title}
@@ -86,8 +85,8 @@ export const MetricCard = ({
 
         <div
           className={cn(
-            "p-2 sm:p-3 rounded-xl flex-shrink-0",
-            variant === "default" ? "bg-gray-800/50" : "bg-white/20"
+            "p-2 sm:p-3 rounded-lg flex-shrink-0",
+            variant === "default" ? "bg-gray-50" : "bg-white/20"
           )}
         >
           {icon}

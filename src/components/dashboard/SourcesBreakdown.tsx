@@ -88,12 +88,12 @@ const sources: Source[] = [
 
 export const SourcesBreakdown = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 shadow-sm">
       <div className="mb-4">
-        <h3 className="font-semibold text-white text-base sm:text-lg">
+        <h3 className="font-semibold text-gray-900 text-base sm:text-lg">
           Sources Breakdown
         </h3>
-        <p className="text-xs sm:text-sm text-gray-400">Mentions by platform</p>
+        <p className="text-xs sm:text-sm text-gray-600">Mentions by platform</p>
       </div>
 
       <div className="space-y-3">
@@ -134,7 +134,7 @@ export const SourcesBreakdown = () => {
         ))}
       </div>
 
-      <div className="mt-6 pt-4 border-t border-purple-900/30">
+      <div className="mt-6 pt-4 border-t border-gray-200">
         <div className="flex items-center justify-between text-sm">
           <span className="text-gray-400">Total mentions</span>
           <span className="font-semibold text-white">35,654</span>
