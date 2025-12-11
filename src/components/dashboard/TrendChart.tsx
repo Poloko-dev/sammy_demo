@@ -20,24 +20,24 @@ const data = [
 
 export const TrendChart = () => {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl border border-purple-900/30 p-4 sm:p-6 shadow-xl">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 shadow-sm">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
         <div>
-          <h3 className="font-semibold text-white text-base sm:text-lg">
+          <h3 className="font-semibold text-gray-900 text-base sm:text-lg">
             Mentions Trend
           </h3>
-          <p className="text-xs sm:text-sm text-gray-400">
+          <p className="text-xs sm:text-sm text-gray-600">
             Last 7 months performance
           </p>
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-500" />
-            <span className="text-xs sm:text-sm text-gray-400">Mentions</span>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-primary" />
+            <span className="text-xs sm:text-sm text-gray-600">Mentions</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-500" />
-            <span className="text-xs sm:text-sm text-gray-400">Reach</span>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gray-400" />
+            <span className="text-xs sm:text-sm text-gray-600">Reach</span>
           </div>
         </div>
       </div>
@@ -71,19 +71,16 @@ export const TrendChart = () => {
                 />
               </linearGradient>
             </defs>
-            <CartesianGrid
-              strokeDasharray="3 3"
-              stroke="rgba(139, 92, 246, 0.1)"
-            />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(220 13% 91%)" />
             <XAxis
               dataKey="name"
-              stroke="rgb(156, 163, 175)"
+              stroke="rgb(107, 114, 128)"
               fontSize={12}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
-              stroke="rgb(156, 163, 175)"
+              stroke="rgb(107, 114, 128)"
               fontSize={12}
               tickLine={false}
               axisLine={false}
@@ -91,12 +88,12 @@ export const TrendChart = () => {
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "rgb(17, 24, 39)",
-                border: "1px solid rgba(139, 92, 246, 0.3)",
-                borderRadius: "0.75rem",
-                color: "white",
+                backgroundColor: "white",
+                border: "1px solid hsl(220 13% 91%)",
+                borderRadius: "0.5rem",
+                color: "rgb(17, 24, 39)",
               }}
-              labelStyle={{ color: "white" }}
+              labelStyle={{ color: "rgb(17, 24, 39)" }}
             />
             <Area
               type="monotone"

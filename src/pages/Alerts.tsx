@@ -55,7 +55,7 @@ const alerts = [
 const typeStyles: Record<string, string> = {
   basic: "bg-muted text-muted-foreground",
   standard: "bg-primary/10 text-primary border-primary/20",
-  advanced: "gradient-primary text-primary-foreground",
+  advanced: "bg-primary text-white",
 };
 
 const Alerts = () => {
